@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/txt_calc"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="45dp"
+        android:gravity="right"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="9999" />
+
+
+    <TextView
+        android:id="@+id/txt_result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="right"
+        android:textColor="#A3A2A2"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_calc"
+        tools:text="result" />
+
+    <LinearLayout
+        android:id="@+id/boundary"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#57000000"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/numberTable"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_result" />
+
+
+    <TableLayout
+        android:id="@+id/numberTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boundary"
+        app:layout_constraintVertical_weight="1">
+
+        <TableRow android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btn_clear"
+                style="@style/CustomButton"
+                android:background="@drawable/rounded_button"
+                android:onClick="onClick"
+                android:text="C"
+                android:textColor="#F80505" />
+
+            <Button
+                android:id="@+id/btn_wrapper"
+                style="@style/CustomButton"
+                android:background="@drawable/rounded_button"
+                android:clickable="false"
+                android:enabled="false"
+                android:onClick="onClick"
+                android:text="()"
+                android:textColor="@color/green" />
+
+            <Button
+                android:id="@+id/btn_percent"
+                style="@style/CustomButton"
+                android:background="@drawable/rounded_button"
+                android:onClick="operatorButtonClick"
+                android:text="%"
+                android:textColor="@color/green" />
+
+            <Button
+                android:id="@+id/btn_div"
+                style="@style/CustomButton"
+                android:background="@drawable/rounded_button"
+                android:onClick="operatorButtonClick"
+                android:text="÷"
+                android:textColor="@color/green" />
+
+        </TableRow>
+
+        <TableRow android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btn_num7"
+                style="@style/CustomButton"
+                android:background="@drawable/rounded_button"
+                android:onClick="onClick"
+                android:text="7"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_num8"
+                style="@style/CustomButton"
+                android:background="@drawable/rounded_button"
+                android:onClick="onClick"
+                android:text="8"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_num9"
+                style="@style/CustomButton"
+                android:background="@drawable/rounded_button"
+                android:onClick="onClick"
+                android:text="9"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_mul"
+                style="@style/CustomButton"
+                android:background="@drawable/rounded_button"
+                android:onClick="operatorButtonClick"
+                android:text="*"
+                android:textColor="@color/green" />
+
+        </TableRow>
+
+        <TableRow android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btn_num4"
+                style="@style/CustomButton"
+                android:background="@drawable/rounded_button"
+                android:onClick="onClick"
+                android:text="4"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_num5"
+                style="@style/CustomButton"
+                android:background="@drawable/rounded_button"
+                android:onClick="onClick"
+                android:text="5"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_num6"
+                style="@style/CustomButton"
+                android:background="@drawable/rounded_button"
+                android:onClick="onClick"
+                android:text="6"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_sub"
+                style="@style/CustomButton"
+                android:background="@drawable/rounded_button"
+                android:onClick="operatorButtonClick"
+                android:text="-"
+                android:textColor="@color/green" />
+
+        </TableRow>
+
+        <TableRow android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btn_num1"
+                style="@style/CustomButton"
+                android:background="@drawable/rounded_button"
+                android:onClick="onClick"
+                android:text="1"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_num2"
+                style="@style/CustomButton"
+                android:background="@drawable/rounded_button"
+                android:onClick="onClick"
+                android:text="2"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_num3"
+                style="@style/CustomButton"
+                android:background="@drawable/rounded_button"
+                android:onClick="onClick"
+                android:text="3"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_add"
+                style="@style/CustomButton"
+                android:background="@drawable/rounded_button"
+                android:onClick="operatorButtonClick"
+                android:text="+"
+                android:textColor="@color/green" />
+
+        </TableRow>
+
+        <TableRow android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/btn_history"
+                style="@style/CustomButton"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_button"
+                android:onClick="ImageButtonClick"
+                android:src="@drawable/ic_baseline_access_time_24"
+                android:tint="@color/black" />
+
+
+            <Button
+                android:id="@+id/btn_num0"
+                style="@style/CustomButton"
+                android:background="@drawable/rounded_button"
+                android:onClick="onClick"
+                android:stateListAnimator="@null"
+                android:text="0"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_quote"
+                style="@style/CustomButton"
+                android:background="@drawable/rounded_button"
+                android:clickable="false"
+                android:enabled="false"
+                android:onClick="onClick"
+                android:text="."
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_result"
+                style="@style/CustomResultButton"
+                android:background="@drawable/equal_layout"
+                android:onClick="onClick"
+                android:text="="
+                android:textColor="@color/white" />
+
+        </TableRow>
+
+
+    </TableLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/HistoryLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/numberTable"
+        app:layout_constraintEnd_toEndOf="@+id/numberTable"
+        app:layout_constraintStart_toStartOf="@id/numberTable"
+        app:layout_constraintTop_toTopOf="@id/numberTable"
+        tools:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_close"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/teal_200"
+            android:text="닫기"
+            android:onClick="historyLayoutButtonClick"
+            android:textSize="15sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_historyDelete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_close">
+
+            <LinearLayout
+                android:id="@+id/HistoryLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" />
+
+        </ScrollView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_historyDelete"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/teal_200"
+            android:text="계산 기록 삭제"
+            android:onClick="historyLayoutButtonClick"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scroll_view" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
